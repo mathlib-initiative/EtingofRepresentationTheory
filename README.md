@@ -25,10 +25,9 @@ scholarly cross-references to numbered results, discussions, introductions,
 and section headings; these citations allow aspects of the book's numbering
 and organization to be inferred.
 
-Authorized readers can [read the aligned Verso
-edition](https://github.com/mathlib-initiative/EtingofRepresentationTheory-verso/releases/latest),
-which places the formalization beside the corresponding book text in an
-access-controlled repository.
+[Read the aligned Verso
+edition](https://mathlib-initiative.github.io/EtingofRepresentationTheory-verso-pages/),
+which places the formalization beside the corresponding book text.
 
 ## Building
 
