@@ -15,13 +15,13 @@ Constructions relating module structures to algebra homomorphisms into linear en
 
 namespace RepresentationTheory.Algebra.ModuleActions
 
-/-- An auxiliary type associated with a ring and an additive commutative group. -/
+/-- Left `A`-module structures on the additive commutative group `V`. -/
 @[source_ref "Chapter2/Example2.3.3/Derived4" (role := supporting),
   source_ref "Chapter2/Discussion_2.1_overview/Derived5" (role := supporting)]
 abbrev RingAddCommGroupAuxiliary (A : Type*) (V : Type*) [Ring A] [AddCommGroup V] :=
   Module A V
 
-/-- A second auxiliary type associated with a ring and an additive commutative group. -/
+/-- Right `A`-module structures on `V`, expressed as left modules over the opposite ring. -/
 @[source_ref "Chapter2/Definition2.3.1" (role := supporting)]
 abbrev RingAddCommGroupAuxiliary' (A : Type*) (V : Type*) [Ring A] [AddCommGroup V] :=
   Module Aᵐᵒᵖ V
