@@ -13,7 +13,8 @@ import Mathlib.LinearAlgebra.Dimension.Finrank
 import Mathlib.LinearAlgebra.Basis.VectorSpace
 import RepresentationTheory.Alignment.Attribute
 
-/-- An auxiliary predicate for the displayed quiver-indexed object over a commutative semiring. -/
+/-- Indecomposability: the representation is nonzero, and any two arrow-stable families
+of vertex submodules giving a direct-sum decomposition have one family identically zero. -/
 def RepresentationTheory.CategoryTheory.QuiverLinearDiagrams.AuxiliaryQuiverModuleData.AuxiliaryCondition
     {k : Type*} [CommSemiring k] {Q : Type*} [Quiver Q]
     (ρ : RepresentationTheory.CategoryTheory.QuiverLinearDiagrams.AuxiliaryQuiverModuleData k Q) : Prop :=
@@ -24,14 +25,14 @@ def RepresentationTheory.CategoryTheory.QuiverLinearDiagrams.AuxiliaryQuiverModu
     (∀ v, IsCompl (W₁ v) (W₂ v)) →
     (∀ v, W₁ v = ⊥) ∨ (∀ v, W₂ v = ⊥)
 
-/-- An auxiliary predicate at a vertex for a quiver-indexed object with finite free component modules. -/
+/-- The vertex-simple dimension vector: dimension one at the selected vertex and zero elsewhere. -/
 def RepresentationTheory.CategoryTheory.QuiverLinearDiagrams.AuxiliaryQuiverModuleData.AuxiliaryVertexCondition
     {k : Type*} [CommSemiring k] {Q : Type*} [DecidableEq Q] [Quiver Q]
     (ρ : RepresentationTheory.CategoryTheory.QuiverLinearDiagrams.AuxiliaryQuiverModuleData k Q) (i : Q)
     [∀ v, Module.Free k (ρ.obj v)] [∀ v, Module.Finite k (ρ.obj v)] : Prop :=
   Module.finrank k (ρ.obj i) = 1 ∧ ∀ j, j ≠ i → Module.finrank k (ρ.obj j) = 0
 
-/-- Given the displayed auxiliary hypothesis, the auxiliary condition implies either the auxiliary vertex condition or surjectivity of the associated map. -/
+/-- A finite-dimensional indecomposable at a sink is vertex-simple or has a surjective incoming map. -/
 @[source_ref "Chapter6/Proposition6.6.5" (role := supporting)]
 theorem RepresentationTheory.QuiverRepresentation.Auxiliary.QuiverRepresentation.Auxiliary.vertexConditionOrSurjective
     {k : Type*} [Field k] {Q : Type*} [DecidableEq Q] [Quiver Q]
@@ -131,7 +132,7 @@ theorem RepresentationTheory.QuiverRepresentation.Auxiliary.QuiverRepresentation
         have := h2 i; simp only [W₂, dite_true] at this; exact this
       exact absurd (LinearMap.range_eq_top.mp (eq_top_of_isCompl_bot (hW_bot ▸ hW))) hsurj
 
-/-- Given the displayed auxiliary hypothesis, the auxiliary condition implies either the auxiliary vertex condition or injectivity of the associated map. -/
+/-- A finite-dimensional indecomposable at a source with finitely many outgoing arrows is vertex-simple or has an injective outgoing map. -/
 @[source_ref "Chapter6/Proposition6.6.5" (role := supporting)]
 theorem RepresentationTheory.QuiverRepresentation.Auxiliary.QuiverRepresentation.Auxiliary.vertexConditionOrInjective
     {k : Type*} [Field k] {Q : Type*} [DecidableEq Q] [Quiver Q]

@@ -2156,7 +2156,7 @@ theorem RepresentationTheory.RingTheory.Artinian.ModuleIdempotents.regularModule
 
   exact RepresentationTheory.RingTheory.Artinian.ModuleIdempotents.auxiliary_result M hM hM_exhaustive
 
-/-- Every finite projective module satisfying the designated module property is linearly equivalent to a member of a projective family with Kronecker-delta linear-map dimensions. -/
+/-- Every indecomposable finitely generated projective is a Pᵢ. -/
 theorem RepresentationTheory.RingTheory.Artinian.ModuleIdempotents.exists_linearEquiv_projective_family
     [IsAlgClosed k]
     {ι : Type*} [Fintype ι] [DecidableEq ι]
@@ -2217,7 +2217,7 @@ theorem RepresentationTheory.RingTheory.Artinian.ModuleIdempotents.exists_linear
 /-- An auxiliary statement whose displayed formal type is unavailable. -/
 alias _root_.RepresentationTheory.RingTheory.Artinian.ModuleIdempotents.Auxiliary.statement016667 := _root_.RepresentationTheory.RingTheory.Artinian.ModuleIdempotents.auxiliary_result
 
-/-- An auxiliary statement whose displayed formal type contains an elided term. -/
+/-- Existence and uniqueness up to isomorphism of indecomposable finitely generated projectives with Kronecker-delta Hom dimensions for an exhaustive simple family. -/
 alias _root_.RepresentationTheory.RingTheory.Artinian.ModuleIdempotents.Auxiliary.statement016753 := _root_.RepresentationTheory.RingTheory.Artinian.ModuleIdempotents.exists_projective_family_with_finrank_hom
 
 -- Recovered exact-module book alignment.

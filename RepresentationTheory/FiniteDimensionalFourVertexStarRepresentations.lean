@@ -84,7 +84,7 @@ noncomputable def FourVertexStarRepresentation.dimension {k : Type*} [Field k] (
   (Module.finrank k ρ.center, Module.finrank k ρ.leafOne,
    Module.finrank k ρ.leafTwo, Module.finrank k ρ.leafThree)
 
-/-- A finite collection of nested four-tuples of natural numbers associated with the four-vertex setting. -/
+/-- The twelve dimension tuples for indecomposable inward-pointing D₄ representations, in center-first order: three leaf simples, eight one-dimensional-center patterns, and (2, 1, 1, 1). -/
 def fourVertexDimensionTuples : Finset (ℕ × ℕ × ℕ × ℕ) :=
   {((0 : ℕ),1,0,0), ((0 : ℕ),0,1,0), ((0 : ℕ),0,0,1),
    ((1 : ℕ),0,0,0),

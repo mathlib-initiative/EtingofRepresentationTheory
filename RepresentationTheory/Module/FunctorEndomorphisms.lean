@@ -81,7 +81,7 @@ noncomputable def finitelyGeneratedModuleDoubleDualFunctor (k : Type u) [Field k
 
 open CategoryTheory in
 
-/-- An isomorphism from the identity functor to double dualization on finitely generated modules. -/
+/-- The natural double-dual isomorphism on finite-dimensional vector spaces over a field, given by evaluation v ↦ (φ ↦ φ(v)). Finitely generated modules over a field are finite-dimensional. -/
 @[source_ref "Chapter7/Example7.3.2" (role := supporting)]
 noncomputable def finitelyGeneratedModuleDoubleDualIso (k : Type u) [Field k] :
     𝟭 (FGModuleCat.{u} k) ≅ finitelyGeneratedModuleDoubleDualFunctor k :=
@@ -222,7 +222,7 @@ theorem invariantLinearMapToDual_not_bijective_of_finrank_ge_three
 
 open CategoryTheory in
 
-/-- No natural isomorphism exists from the identity functor to dualization on the core of finitely generated modules. -/
+/-- On finite-dimensional vector spaces with only isomorphisms as arrows, inverse-dual transport defines a covariant functor that is not naturally isomorphic to the identity over any field. -/
 @[source_ref "Chapter7/Example7.3.2" (role := supporting)]
 theorem isEmpty_iso_id_finitelyGeneratedModuleDualFunctor (k : Type u) [Field k] :
     IsEmpty (𝟭 (Core (FGModuleCat.{u} k)) ≅ finitelyGeneratedModuleDualFunctor k) := by
@@ -375,7 +375,7 @@ theorem restrictionEndToAlgebra_algebraToRestrictionEnd {k : Type v} {A : Type u
 
 open CategoryTheory in
 
-/-- The ring equivalence between natural endomorphisms of scalar restriction and the acting algebra. -/
+/-- Natural endomorphisms of the forgetful functor from A-modules to base-ring modules form the ring A. An endomorphism is determined by its value at 1 in the regular module. -/
 @[source_ref "Chapter7/Example7.3.2" (role := primary)]
 noncomputable def restrictionEndRingEquivAlgebra (k : Type v) (A : Type u)
     [CommRing k] [Ring A] [Algebra k A] :
@@ -453,7 +453,7 @@ theorem moduleIdentityEndToRing_centerToModuleIdentityEnd {A : Type u} [Ring A] 
 
 open CategoryTheory in
 
-/-- The ring equivalence between natural endomorphisms of the module identity functor and the ring center. -/
+/-- Natural endomorphisms of the identity functor on A-modules form the center of A. Evaluation at 1 in the regular module determines the central element. -/
 @[source_ref "Chapter7/Example7.3.2" (role := primary)]
 def moduleIdentityEndRingEquivCenter (A : Type u) [Ring A] :
     End (𝟭 (ModuleCat.{u} A)) ≃+* Subring.center A where

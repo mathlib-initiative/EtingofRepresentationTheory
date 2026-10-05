@@ -781,7 +781,7 @@ theorem Auxiliary.variable_count_le_of_property (k : Type u) [Field k] :
       omega
 
 
-/-- For a multivariate polynomial ring indexed by Fin n over a field, the auxiliary value is the cast of n. -/
+/-- The global dimension of k[x₁, …, xₙ] is n. -/
 theorem Auxiliary.mvPolynomial_value_eq_natCast (k : Type u) [Field k] (n : ℕ) :
     RepresentationTheory.Auxiliary.RingData.auxiliaryRingENatInvariant (MvPolynomial (Fin n) k) = n := by
   unfold RepresentationTheory.Auxiliary.RingData.auxiliaryRingENatInvariant

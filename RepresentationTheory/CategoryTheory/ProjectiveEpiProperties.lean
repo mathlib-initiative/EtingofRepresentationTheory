@@ -15,7 +15,7 @@ open CategoryTheory CategoryTheory.Limits
 
 namespace RepresentationTheory.CategoryTheory.ProjectiveEpiProperties
 
-/-- A property characterized by projectivity and epimorphic coproduct desc morphisms. -/
+/-- A projective separator. -/
 def IsProjectiveEpiSigmaDesc {C : Type u} [Category.{v} C] (P : C) : Prop :=
   Projective P ∧ IsSeparator P
 
@@ -37,12 +37,10 @@ theorem iff_projective_and_epi_sigma_desc [∀ X : C, HasCoproduct fun _ : P ⟶
 
 end IsProjectiveEpiSigmaDesc
 
-/-- A property of an object in a category with zero morphisms that supplies epimorphism witnesses
-and entails projectivity. -/
+/-- A projective object whose finite direct sums map epimorphically onto every object. -/
 class HasProjectiveEpiWitnesses {C : Type u} [Category.{v} C] [HasZeroMorphisms C] (P : C)
     extends toProjective : Projective P where
-  /-- For each object, the property supplies existential data whose final morphism is an
-  epimorphism. -/
+  /-- For each object X, some finite biproduct of P admits an epimorphism to X. -/
   exists_epi : ∀ (X : C), ∃ (n : ℕ) (_ : HasBiproduct (fun _ : Fin n => P))
     (f : biproduct (fun _ : Fin n => P) ⟶ X), Epi f
 

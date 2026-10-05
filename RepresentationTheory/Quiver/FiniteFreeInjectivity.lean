@@ -615,7 +615,7 @@ end Helpers
 
 
 
-/-- An injective underlying function of the vertex-indexed map gives an inhabitant of the associated auxiliary construction. -/
+/-- At a source with injective outgoing map, kernel reflection after cokernel reflection recovers an isomorphic representation. -/
 @[source_ref "Chapter6/Proposition6.6.6" (role := supporting)]
 theorem RepresentationTheory.Quiver.FiniteFreeInjectivity.nonemptyAuxiliaryOfInjective
     {k : Type*} [Field k]

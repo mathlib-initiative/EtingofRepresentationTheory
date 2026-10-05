@@ -33,7 +33,7 @@ theorem auxiliary_not_relation_of_semisimpleRing
     haveI := Abelian.Ext.subsingleton_of_projective B A 0
     exact not_nontrivial _ h
 
-/-- Characterizes the displayed auxiliary relation between simple module-category objects over a semisimple ring by the existence of an isomorphism. -/
+/-- Semisimple blocks separate the simple isomorphism types. -/
 theorem auxiliary_relation_iff_nonemptyIso_of_simpleModules
     (R : Type u) [Ring R] [Small.{v} R] [IsSemisimpleRing R]
     (X Y : ModuleCat.{v} R) (hX : IsSimpleModule R X) (hY : IsSimpleModule R Y) :
@@ -65,7 +65,7 @@ theorem nonemptyIso_of_auxiliary_relation_of_simpleModules
     Nonempty (X ≅ Y) :=
   (auxiliary_relation_iff_nonemptyIso_of_simpleModules R X Y hX hY).mp hlinked
 
-/-- Provides the displayed auxiliary relation between two simple module-category objects over a local Artinian commutative ring. -/
+/-- A commutative local Artinian ring has one simple block. -/
 theorem auxiliary_relation_of_simpleModules_of_localArtinian
     (R : Type u) [CommRing R] [Small.{v} R] [IsLocalRing R] [IsArtinianRing R]
     (X Y : ModuleCat.{v} R)
@@ -120,7 +120,7 @@ theorem auxiliary_relation_of_simpleModule_to_fixed
       (Relation.EqvGen.symm _ _ auxiliary_relation_between_fixed)
 
 open RepresentationTheory.InvolutiveSquareZeroAlgebra in
-/-- Establishes the displayed auxiliary relation between module-category objects induced by two simple modules. -/
+/-- The two-signed-simple algebra has one block. -/
 theorem auxiliary_relation_of_simpleModules
     (X Y : Type) [AddCommGroup X] [Module ℂ X] [Module Algebra X] [IsScalarTower ℂ Algebra X]
     [IsSimpleModule Algebra X] [AddCommGroup Y] [Module ℂ Y] [Module Algebra Y]

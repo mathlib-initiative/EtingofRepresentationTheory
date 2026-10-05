@@ -7,7 +7,7 @@ Authors: mathlib-initiative
 import Mathlib
 import RepresentationTheory.Alignment.Attribute
 
-/-! # Auxiliary representation isomorphisms -/
+/-! # Irreducible representations of finite semidirect products with abelian normal subgroup -/
 
 namespace RepresentationTheory.AuxiliaryRepresentationIsomorphisms
 
@@ -2224,7 +2224,9 @@ private lemma inducedRepV_orbit_classification {G A : Type} [Group G] [CommGroup
   have e1 : inducedRepV φ χ₂ (transportRep φ hg U₁) ≅ inducedRepV φ χ₂ U₂ := e0.trans e
   exact ⟨(inducedRepV_U_iso φ χ₂ (transportRep φ hg U₁) U₂ e1).symm⟩
 
-/-- An auxiliary result whose formal statement is unavailable. -/
+/-- Construct the irreducible complex representations of a finite semidirect product from
+character orbits and irreducible stabilizer representations, with classification,
+Frobenius character and dimension formulas, and independence of the orbit base point. -/
 @[source_ref "Chapter5/Discussion_semidirect_products" (role := supporting),
   source_ref "Chapter5/Theorem5.27.1" (role := supporting)]
 theorem auxiliary_theorem
@@ -2433,7 +2435,8 @@ theorem auxiliary_theorem
     haveI := hU
     exact transportRep_simple φ hg U
 
-/-- Under the displayed equality, the two auxiliary representations are isomorphic. -/
+/-- Moving a character within its orbit and transporting the stabilizer representation
+gives an equivariantly isomorphic induced representation. -/
 @[source_ref "Chapter5/Discussion_semidirect_products" (role := primary),
   source_ref "Chapter5/Theorem5.27.1" (role := supporting)]
 theorem auxiliary_nonempty_iso_of_eq {G A : Type} [Group G] [CommGroup A] [Fintype G]

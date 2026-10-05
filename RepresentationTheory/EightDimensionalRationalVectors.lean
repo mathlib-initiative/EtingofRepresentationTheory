@@ -11,30 +11,31 @@ import RepresentationTheory.Alignment.Attribute
 /-!
 # Eight-dimensional rational vectors
 
-Auxiliary constructions and cardinality results for sets of eight-dimensional rational vectors.
+The E₈ integer/half-integer lattice, its E₇ and E₆ coordinate slices, an integer
+basis of E₈, and exact counts of their norm-two vectors.
 -/
 
 namespace RepresentationTheory.EightDimensionalRationalVectors
 
 open Finset
 
-/-- An auxiliary rational-valued pairing of eight-coordinate rational vectors. -/
+/-- The ordinary coordinate inner product on ℚ⁸. -/
 def Auxiliary.rationalVectorPairing (x y : Fin 8 → ℚ) : ℚ := ∑ i, x i * y i
 
-/-- A second auxiliary predicate on eight-coordinate rational vectors. -/
+/-- Every coordinate is an integer. -/
 def Auxiliary.rationalVectorPredicateB (x : Fin 8 → ℚ) : Prop := ∀ i, ∃ n : ℤ, x i = n
 
-/-- An auxiliary predicate on rational vectors with eight coordinates. -/
+/-- Every coordinate is an integer plus one half. -/
 def Auxiliary.rationalVectorPredicateA (x : Fin 8 → ℚ) : Prop := ∀ i, ∃ n : ℤ, x i = (n : ℚ) + 1 / 2
 
-/-- A third auxiliary predicate on eight-coordinate rational vectors. -/
+/-- The sum of the coordinates is an even integer. -/
 def Auxiliary.rationalVectorPredicateC (x : Fin 8 → ℚ) : Prop := ∃ m : ℤ, (∑ i, x i) = 2 * m
 
-/-- A third auxiliary set of rational vectors with eight coordinates. -/
+/-- The E₈ lattice: all-integer or all-half-integer coordinates with even sum. -/
 def Auxiliary.rationalVectorSetC : Set (Fin 8 → ℚ) :=
   {x | (Auxiliary.rationalVectorPredicateB x ∨ Auxiliary.rationalVectorPredicateA x) ∧ Auxiliary.rationalVectorPredicateC x}
 
-/-- An auxiliary transformation of sets of eight-coordinate rational vectors. -/
+/-- The squared-norm-two vectors in a coordinate lattice. -/
 def Auxiliary.rationalVectorSetTransform (S : Set (Fin 8 → ℚ)) : Set (Fin 8 → ℚ) := {x ∈ S | Auxiliary.rationalVectorPairing x x = 2}
 
 /-- An auxiliary rational matrix indexed by eight rows and columns. -/
@@ -109,7 +110,7 @@ private lemma sum_α_coord (c : Fin 8 → ℤ) (k : Fin 8) :
 
 set_option linter.unusedSimpArgs false in
 
-/-- The third auxiliary set consists exactly of integer linear combinations of the indexed rational vectors. -/
+/-- L is the integer span of the eight displayed vectors. -/
 @[source_ref "Chapter6/Problem6.9.2" (role := supporting)]
 theorem rationalVectorSetC_integerSpan_characterization :
     (∀ x ∈ Auxiliary.rationalVectorSetC, ∃ c : Fin 8 → ℤ, x = ∑ i, (c i : ℚ) • integralBasisVector i) ∧
@@ -219,11 +220,11 @@ theorem Auxiliary.integerMatrix_structure :
     fin_cases i <;> fin_cases j <;> rfl
   exact ⟨RepresentationTheory.FiniteIntegerMatrixModels.matrixCondition_of_relabeling σ hiso (RepresentationTheory.FiniteIntegerMatrixModels.matrix_satisfies_condition .E8), σ, hiso⟩
 
-/-- A second auxiliary set of rational vectors with eight coordinates. -/
+/-- The E₇ coordinate slice of the E₈ lattice: the first two coordinates are equal. -/
 @[source_ref "Chapter6/Problem6.9.2" (role := supporting)]
 def Auxiliary.rationalVectorSetB : Set (Fin 8 → ℚ) := {x ∈ Auxiliary.rationalVectorSetC | x 0 = x 1}
 
-/-- An auxiliary set of rational vectors indexed by eight coordinates. -/
+/-- The E₆ coordinate slice of the E₈ lattice: the first three coordinates are equal. -/
 @[source_ref "Chapter6/Problem6.9.2" (role := supporting)]
 def Auxiliary.rationalVectorSetA : Set (Fin 8 → ℚ) := {x ∈ Auxiliary.rationalVectorSetC | x 0 = x 1 ∧ x 1 = x 2}
 
@@ -534,7 +535,7 @@ private lemma disjoint_int_half {I : Finset Auxiliary.parameterType} {J : Finset
 
 set_option maxRecDepth 10000 in
 
-/-- The transformed third auxiliary vector set has cardinality two hundred forty. -/
+/-- E₈ has 240 roots. -/
 @[source_ref "Chapter6/Problem6.9.2" (role := supporting)]
 theorem ncard_setTransform_rationalVectorSetC : (Auxiliary.rationalVectorSetTransform Auxiliary.rationalVectorSetC).ncard = 240 := by
   have hset : Auxiliary.rationalVectorSetTransform Auxiliary.rationalVectorSetC = ↑((univ.filter (fun p : Auxiliary.parameterType => p.1 < p.2.1)).image Auxiliary.parameterRationalVector ∪
@@ -564,7 +565,7 @@ theorem ncard_setTransform_rationalVectorSetC : (Auxiliary.rationalVectorSetTran
 
 set_option maxRecDepth 40000 in
 
-/-- The transformed second auxiliary vector set has cardinality one hundred twenty-six. -/
+/-- E₇ has 126 roots. -/
 @[source_ref "Chapter6/Problem6.9.2" (role := supporting)]
 theorem ncard_setTransform_rationalVectorSetB : (Auxiliary.rationalVectorSetTransform Auxiliary.rationalVectorSetB).ncard = 126 := by
   have hset : Auxiliary.rationalVectorSetTransform Auxiliary.rationalVectorSetB =
@@ -601,7 +602,7 @@ theorem ncard_setTransform_rationalVectorSetB : (Auxiliary.rationalVectorSetTran
 
 set_option maxRecDepth 40000 in
 
-/-- The transformed first auxiliary vector set has cardinality seventy-two. -/
+/-- E₆ has 72 roots. -/
 @[source_ref "Chapter6/Problem6.9.2" (role := supporting)]
 theorem ncard_setTransform_rationalVectorSetA : (Auxiliary.rationalVectorSetTransform Auxiliary.rationalVectorSetA).ncard = 72 := by
   have hset : Auxiliary.rationalVectorSetTransform Auxiliary.rationalVectorSetA =
