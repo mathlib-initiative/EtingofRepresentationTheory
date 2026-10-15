@@ -9,7 +9,7 @@ import RepresentationTheory.Alignment.Attribute
 
 namespace RepresentationTheory.Auxiliary.FiniteIndexedRingFunctionPredicate
 
-/-- An auxiliary predicate on functions from a finite decidable index type to a ring. -/
+/-- A complete orthogonal family of idempotents: pairwise zero products, idempotence and sum one. -/
 abbrev isFiniteIndexedRingFunctionAuxiliary {B : Type*} [Ring B] {ι : Type*}
     [Fintype ι] [DecidableEq ι] (e : ι → B) : Prop :=
   CompleteOrthogonalIdempotents e

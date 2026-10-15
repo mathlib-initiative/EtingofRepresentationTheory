@@ -45,7 +45,7 @@ end Reversal
 
 section Iso
 
-/-- Auxiliary data parametrized by two values of the displayed type. -/
+/-- An isomorphism of quiver representations: a linear equivalence at every vertex commuting with each arrow map. -/
 structure RepresentationTheory.CategoryTheory.QuiverLinearDiagrams.AuxiliaryQuiverModuleData.AuxiliaryData
     {k : Type*} [CommSemiring k] {Q : Type*} [Quiver Q]
     (ρ₁ ρ₂ : RepresentationTheory.CategoryTheory.QuiverLinearDiagrams.AuxiliaryQuiverModuleData k Q) : Type _ where

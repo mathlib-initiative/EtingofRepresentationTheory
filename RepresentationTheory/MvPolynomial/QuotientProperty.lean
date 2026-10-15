@@ -16,9 +16,9 @@ open _root_.MvPolynomial
 
 variable {k : Type*} [Field k] {n : ℕ}
 
-/-- The quotient by a proper ideal has the displayed property when the ideal contains all sufficiently low-degree homogeneous polynomials. -/
+/-- The regular quotient module is indecomposable when a proper ideal contains every homogeneous polynomial of degree at least N. -/
 @[source_ref "Chapter2/Problem2.5.1" (role := primary)]
-theorem quotient_property_of_low_degree_homogeneous_mem (N : ℕ) (I : Ideal (MvPolynomial (Fin n) k))
+theorem quotient_indecomposable_of_high_degree_homogeneous_mem (N : ℕ) (I : Ideal (MvPolynomial (Fin n) k))
     (hIne : I ≠ ⊤)
     (hI : ∀ (d : ℕ) (p : MvPolynomial (Fin n) k), N ≤ d → p.IsHomogeneous d → p ∈ I) :
     RepresentationTheory.LinearAlgebra.ModuleDecompositions.AuxiliaryDecompositionPredicate (MvPolynomial (Fin n) k) (MvPolynomial (Fin n) k ⧸ I) := by

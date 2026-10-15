@@ -278,7 +278,7 @@ set_option linter.unusedFintypeInType false in
 
 
 
-/-- A submodule of a direct sum of pairwise inequivalent simple types is equivalent to a direct sum with bounded multiplicities. -/
+/-- A submodule of finitely many copies of pairwise nonisomorphic simple modules has the same simple types, with each multiplicity bounded by the original one. -/
 @[source_ref "Chapter3/Discussion_proof_of_Theorem3.3.1" (role := supporting), source_ref "Chapter3/Proposition3.1.4" (role := primary)]
 theorem exists_equiv_directSum_fin (n : ι → ℕ)
     (hd : ∀ ⦃i j⦄, Nonempty (V i ≃ₗ[A] V j) → i = j)
@@ -431,10 +431,7 @@ set_option linter.unusedFintypeInType false in
 
 
 
-/--
-A submodule of the displayed direct sum admits bounded multiplicities and linearly independent
-coordinate data satisfying the stated expansion formula.
--/
+/-- The inclusion of a submodule of a finite direct sum of simple modules is blockwise a matrix of endomorphisms with right-linearly independent rows. -/
 @[source_ref "Chapter3/Discussion_after_Lemma3.1.6/Derived4" (role := supporting), source_ref "Chapter3/Proposition3.1.4" (role := supporting)]
 theorem exists_linearIndependent_coordinates_directSum (n : ι → ℕ)
     (hd : ∀ ⦃i j⦄, Nonempty (V i ≃ₗ[A] V j) → i = j)

@@ -17,11 +17,11 @@ open CategoryTheory
 
 namespace RepresentationTheory.CategoryTheory.SubobjectFiniteDimensional
 
-/-- A category whose subobject orders are finite-dimensional. -/
+/-- An abelian category with enough projectives, a finite exhaustive family of simple types, and finite-length subobject lattices. The field-linear hypotheses are separate. -/
 class SubobjectFiniteDimensional (C : Type u) [Category.{v} C] extends
     toAbelian : Abelian C,
     toEnoughProjectives : EnoughProjectives C where
-  /-- An auxiliary type associated to the category. -/
+  /-- A finite indexing type for a family covering the simple objects up to isomorphism. -/
   Auxiliary : Type
   private [auxiliaryFintype : Fintype Auxiliary]
   private auxiliaryObject : Auxiliary → C

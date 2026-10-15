@@ -25,7 +25,7 @@ variable {A : Type*} [Ring A] [Algebra k A] [Module.Finite k A]
 
 namespace RepresentationTheory.Algebra.Module.CompositionSeries
 
-/-- A natural-number invariant associated with a composition series of submodules and a module. -/
+/-- Multiplicity in a composition series. -/
 noncomputable def CompositionSeries.moduleNatInvariant
     {N : Type*} [AddCommGroup N] [Module A N]
     (s : CompositionSeries (Submodule A N))
@@ -156,7 +156,7 @@ theorem Module.finrank_hom_top_eq
 
 end Helpers
 
-/-- Identifies the series invariant with the finite rank of a linear-map module under the stated hypotheses. -/
+/-- Hom dimension equals the Jordan–Hölder multiplicity. -/
 theorem CompositionSeries.moduleNatInvariant_eq_finrank_hom
     {ι : Type*} [Fintype ι] [DecidableEq ι]
     (M : ι → Type*) [∀ i, AddCommGroup (M i)] [∀ i, Module A (M i)]

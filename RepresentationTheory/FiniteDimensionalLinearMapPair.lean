@@ -761,7 +761,7 @@ noncomputable def AuxiliaryClass.rep : AuxiliaryClass → FiniteDimensionalLinea
   | .preprojective n => auxiliaryModelB n n.2
   | .preinjective n => auxiliaryModelC n n.2
 
-/-- The chosen representative satisfies the auxiliary condition. -/
+/-- Every positive-size representative Eₙ,λ, Eₙ,∞, Hₙ or Kₙ is nonzero and indecomposable. -/
 @[source_ref "Chapter6/Problem6.9.1" (role := supporting)]
 theorem AuxiliaryClass.rep_auxiliaryCondition (c : AuxiliaryClass) :
     c.rep.AuxiliaryCondition := by
@@ -795,7 +795,7 @@ private theorem auxiliaryModelA_B_not_injective (n : ℕ) (hn : 0 < n) :
     ¬Function.Injective (auxiliaryModelA n hn).rightToLeft := by
   exact auxiliaryEigenvalueModel_zero_A_not_injective n hn
 
-/-- Two auxiliary classes are equal when their representatives are equivalent. -/
+/-- An equivalence intertwining both maps between two representatives forces equality of their family, size and eigenvalue parameters. -/
 @[source_ref "Chapter6/Problem6.9.1" (role := supporting)]
 theorem AuxiliaryClass.eq_of_rep_equiv {c d : AuxiliaryClass} (e : c.rep.Equiv d.rep) :
     c = d := by
@@ -3191,7 +3191,7 @@ theorem finrank_eq_or_eq_add_one (ρ : FiniteDimensionalLinearMapPair ℂ) (hρ 
     · -- qW = ⊥: contradiction with AB not nilpotent
       exact absurd hqW hqW_ne
 
-/-- Nilpotence of the composite on the second component implies nilpotence of the induced endomorphism on the product. -/
+/-- Nilpotency of AB implies nilpotency of X. -/
 @[source_ref "Chapter6/Problem6.9.1" (role := supporting)]
 theorem combinedEndomorphism_isNilpotent_of_comp_isNilpotent (ρ : FiniteDimensionalLinearMapPair ℂ)
     (hAB : IsNilpotent (ρ.leftToRight.comp ρ.rightToLeft)) :

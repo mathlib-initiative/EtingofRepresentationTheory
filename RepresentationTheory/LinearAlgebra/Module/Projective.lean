@@ -468,7 +468,7 @@ theorem unrenderedMatrixTheorem
   exact ⟨e, he.symm⟩
 
 
-/-- Shows that the displayed value on a polynomial quotient is top when the exponent is greater than one. -/
+/-- k[t]/(tⁿ) has infinite global dimension for n > 1. -/
 @[source_ref "Chapter9/Problem9.4.5" (role := primary)]
 theorem quotientPolynomialXPower_value_eq_top
     (k : Type u) [Field k] (n : ℕ) (hn : 1 < n) :
@@ -506,7 +506,7 @@ private theorem ext_odd_ne_zero (j : ℕ) :
       (n := 2 * (j + 1) + 1) (by ring)⟩
 
 
-/-- Establishes the top value of the displayed construction on the designated ring. -/
+/-- The involutive square-zero algebra has infinite global dimension. -/
 @[source_ref "Chapter9/Problem9.4.5" (role := primary)]
 theorem designatedRing_value_eq_top :
     RepresentationTheory.Auxiliary.RingData.auxiliaryRingENatInvariant RepresentationTheory.InvolutiveSquareZeroAlgebra.Algebra = ⊤ := by
@@ -518,7 +518,7 @@ theorem designatedRing_value_eq_top :
 
 end RepresentationTheory.LinearAlgebra.Module.Projective
 
-/-- An auxiliary statement whose displayed formal type is unavailable. -/
+/-- Finite global dimension forces det(C) = ±1. -/
 alias _root_.RepresentationTheory.LinearAlgebra.Module.Projective.Auxiliary.statement013909 := _root_.RepresentationTheory.LinearAlgebra.Module.Projective.unrenderedMatrixTheorem
 
 /-- An auxiliary statement whose displayed formal type is unavailable. -/

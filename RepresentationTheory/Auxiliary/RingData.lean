@@ -13,11 +13,11 @@ universe u
 
 namespace RepresentationTheory.Auxiliary.RingData
 
-/-- An auxiliary property of a ring indexed by a natural number. -/
+/-- Every left module has dimension at most d. -/
 def auxiliaryRingNatProperty (R : Type u) [Ring R] (d : ℕ) : Prop :=
   ∀ (M : ModuleCat.{u} R), CategoryTheory.HasProjectiveDimensionLE M d
 
-/-- An auxiliary extended-natural-valued invariant of a ring. -/
+/-- Left global dimension. -/
 noncomputable def auxiliaryRingENatInvariant (R : Type u) [Ring R] : ℕ∞ :=
   ⨅ (d : ℕ) (_ : auxiliaryRingNatProperty R d), (d : ℕ∞)
 
@@ -33,7 +33,7 @@ noncomputable abbrev auxiliaryRingENatInvariantAux (R : Type u) [Ring R] : ℕ�
 def auxiliaryRingNatPropertyThird (R : Type u) [Ring R] (d : ℕ) : Prop :=
   auxiliaryRingNatProperty Rᵐᵒᵖ d
 
-/-- A third auxiliary extended-natural-valued invariant of a ring. -/
+/-- Right global dimension. -/
 noncomputable def auxiliaryRingENatInvariantThird (R : Type u) [Ring R] : ℕ∞ :=
   auxiliaryRingENatInvariant Rᵐᵒᵖ
 

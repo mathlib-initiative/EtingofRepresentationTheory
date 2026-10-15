@@ -820,7 +820,7 @@ universe u in
 
 
 
-/-- Under the displayed matrix and quiver hypotheses, there exists an auxiliary representation whose vertexwise finranks realize the prescribed integer-valued function. -/
+/-- Every positive integer root of a connected Dynkin graph is the dimension vector of a finite-dimensional indecomposable over any field and any simple orientation. -/
 @[source_ref "Chapter6/Corollary6.8.4" (role := primary)]
 theorem RepresentationTheory.AuxiliaryQuiverRepresentationDimensions.auxiliary_exists_representation_finrank_eq
     {n : ℕ} {adj : Matrix (Fin n) (Fin n) ℤ}

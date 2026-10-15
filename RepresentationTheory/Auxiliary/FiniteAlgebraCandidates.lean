@@ -225,7 +225,7 @@ theorem Auxiliary.finrank_le_of_two_conditions' [IsAlgClosed k]
     Module.finrank k B ≤ Module.finrank k A :=
   Auxiliary.finrank_le_of_two_conditions k A B hB.toAuxiliaryOfIsAlgClosed hMor
 
-/-- Produces a finite algebraic candidate satisfying the displayed conditions, with a rank bound and uniqueness up to algebra equivalence among the specified candidates. -/
+/-- Over an algebraically closed base, a finite-dimensional algebra admits a basic representative with no larger dimension. The comparison is a field-linear equivalence between categories of all modules; uniqueness is up to algebra isomorphism among basic representatives with such a comparison. -/
 theorem Auxiliary.exists_type_with_three_conditions_finrank_le_and_unique [IsAlgClosed k]
     (A : Type u) [Ring A] [Algebra k A] [Module.Finite k A] :
     ∃ (B : Type u) (_ : Ring B) (_ : Algebra k B) (_ : Module.Finite k B),

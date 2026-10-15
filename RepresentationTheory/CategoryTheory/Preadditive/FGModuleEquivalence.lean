@@ -365,7 +365,7 @@ theorem fgModuleFunctor_isEquivalence_of_noetherian
         obtain ⟨g, hg⟩ := hF.map_surjective f.hom
         exact ⟨g, InducedCategory.hom_ext hg⟩ }
 
-/-- Under the displayed field-linear hypotheses, the module functor is an equivalence. -/
+/-- Hom(P, −) is an equivalence with finitely generated modules. -/
 theorem fgModuleFunctor_isEquivalence
     {k : Type w} [Field k] {C : Type u} [Category.{v} C]
     [SubobjectFiniteDimensional C] [Linear k C]

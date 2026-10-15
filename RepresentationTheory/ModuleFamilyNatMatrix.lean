@@ -21,7 +21,7 @@ namespace RepresentationTheory.ModuleFamilyNatMatrix.ModuleFamilyNatMatrix
 variable {k : Type*} [Field k]
 variable {A : Type*} [Ring A] [Algebra k A]
 
-/-- An auxiliary natural-number matrix associated with a family of modules. -/
+/-- The matrix with entry (i, j) equal to dim_k Hom_A(P i, P j). It is the Cartan matrix when the family consists of projective covers. -/
 noncomputable def matrix
     {ι : Type*} (P : ι → Type*)
     [∀ i, AddCommGroup (P i)] [∀ i, Module A (P i)]
@@ -29,7 +29,7 @@ noncomputable def matrix
     Matrix ι ι ℕ :=
   Matrix.of fun i j => Module.finrank k (P i →ₗ[A] P j)
 
-/-- The diagonal entry of the auxiliary matrix is positive for a finite nontrivial module. -/
+/-- Each diagonal entry is positive. -/
 theorem matrix_diagonal_pos
     {ι : Type*} (P : ι → Type*)
     [∀ i, AddCommGroup (P i)] [∀ i, Module A (P i)]

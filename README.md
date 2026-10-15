@@ -25,10 +25,9 @@ scholarly cross-references to numbered results, discussions, introductions,
 and section headings; these citations allow aspects of the book's numbering
 and organization to be inferred.
 
-Authorized readers can [read the aligned Verso
-edition](https://github.com/mathlib-initiative/EtingofRepresentationTheory-verso/releases/latest),
-which places the formalization beside the corresponding book text in an
-access-controlled repository.
+[Read the aligned Verso
+edition](https://mathlib-initiative.github.io/EtingofRepresentationTheory-verso-pages/),
+which places the formalization beside the corresponding book text.
 
 ## Building
 
@@ -37,6 +36,12 @@ lake update
 lake exe cache get
 lake build
 ```
+
+## Development
+
+This repository is generated output. Make changes and open PRs in the
+[background source repository](https://github.com/mathlib-initiative/Etingof-RepresentationTheory-draft1),
+then publish through its materialization process. Do not edit or open PRs here.
 
 ## License
 
